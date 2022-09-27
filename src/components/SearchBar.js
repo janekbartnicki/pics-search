@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
 
 export default class SearchBar extends Component{
-    onInputChange(event){
-        console.log(event.target.value);
+    state = {term: ''};
+
+    onFormSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state.term);
     }
 
     render() {
         return (
-            <form>
+            <form onSubmit={this.onFormSubmit}>
                 <div className="ui fluid action input">
-                    <input type="text" placeholder="Image search..." onChange={this.onInputChange}/>
+                    <input type="text" value={this.state.term} placeholder="Image search..." onChange={(event) => this.setState({term: event.target.value})}/>
                     <button className="ui button">Search</button>
                 </div>
             </form>
