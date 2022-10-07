@@ -23,8 +23,8 @@ export default class App extends Component {
     render() {
         return (
             <div className='ui container' style={{marginTop: '2%'}}>
-                <SearchBar onSubmit={this.onSearchSubmit}/>
-                Found {this.state.images.length} images.
+                <SearchBar onSubmit={this.onSearchSubmit}/><br/>
+                Found {this.state.images.length} images.<br/><br/>
                 <ImageList images={this.state.images} searchTerm={this.state.term}/>
             </div>
         )
